@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3MX-ri-r5M">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--Broadcast-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="PublisherViewController" customModule="SwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oNz-Ei-NMz"/>
+                        <viewControllerLayoutGuide type="bottom" id="YMV-Eg-jok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="CineBroadcasterView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Broadcast" image="Record" id="Go8-QC-eql"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="-1168"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sWE-uX-5Mc">
+            <objects>
+                <tabBarController definesPresentationContext="YES" hidesBottomBarWhenPushed="YES" id="3MX-ri-r5M" customClass="TabBarController" customModule="SwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="I7f-ce-HhN">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fco-Yw-udF" kind="relationship" relationship="viewControllers" id="GKO-Z8-42g"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="uZ5-C4-kYN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9V-t4-kdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-649" y="-869"/>
+        </scene>
+        <!--Watch-->
+        <scene sceneID="jnM-ZO-hp6">
+            <objects>
+                <viewController id="fco-Yw-udF" customClass="StreamerViewController" customModule="SwiftExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cdq-xY-mXa"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddT-62-gqB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xum-Fa-GEE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfv-Vw-vbS">
+                                <rect key="frame" x="96" y="196" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="F6l-R5-WCj"/>
+                                    <constraint firstAttribute="width" constant="128" id="az7-uy-sPM"/>
+                                    <constraint firstAttribute="height" constant="128" id="mOY-ZD-hFt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="pdQ-6O-VUp"/>
+                                </constraints>
+                                <state key="normal" image="Circle Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="fco-Yw-udF" eventType="touchUpInside" id="Qwt-Xn-2aA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Xfv-Vw-vbS" secondAttribute="centerY" id="B1H-TB-5rh"/>
+                            <constraint firstAttribute="centerX" secondItem="Xfv-Vw-vbS" secondAttribute="centerX" id="wKX-LX-R1a"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Watch" image="Play" id="r0X-MR-HgF"/>
+                    <connections>
+                        <outlet property="playButton" destination="Xfv-Vw-vbS" id="gPz-G6-Dsu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A9U-kt-DZP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="-487"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Circle Play" width="256" height="256"/>
+        <image name="Play" width="25" height="25"/>
+        <image name="Record" width="25" height="25"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
