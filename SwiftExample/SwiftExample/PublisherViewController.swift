@@ -12,7 +12,8 @@ class PublisherViewController: CineBroadcasterViewController {
 
     override func viewDidLoad() {
         //-- A/V setup
-        self.videoSize = CGSizeMake(720, 1280) // start in portrait mode to avoid shrinking video bug (https://github.com/jgh-/VideoCore/issues/84)
+        self.orientationLocked = false  // set to true to turn off rotation support in UI
+        self.videoSize = CGSizeMake(720, 1280)
         self.framesPerSecond = 30
         self.videoBitRate = 1500000
         self.sampleRateInHz = 44100 // either 44100 or 22050
