@@ -12,6 +12,7 @@ class PublisherViewController: CineBroadcasterViewController {
 
     override func viewDidLoad() {
         //-- A/V setup
+        self.orientationLocked = false  // set to true to turn off rotation support in UI
         self.videoSize = CGSizeMake(720, 1280)
         self.framesPerSecond = 30
         self.videoBitRate = 1500000
