@@ -1,7 +1,7 @@
-# cineio-ios-swift-example-app
+# cineio-broadcast-ios-swift-example-app
 
 Sample iOS application (written in Swift) to demonstrate broadcasting and playback
-using the [cine.io iOS SDK][cineio-ios].
+using the [cine.io Broadcast iOS SDK][cineio-broadcast-ios].
 
 ## How to Use
 
@@ -15,5 +15,5 @@ using the [cine.io iOS SDK][cineio-ios].
 
 
 <!-- external links -->
-[cineio-ios]:https://github.com/cine-io/cineio-ios
+[cineio-broadcast-ios]:https://github.com/cine-io/cineio-broadcast-ios
 [cine]:https://www.cine.io/
