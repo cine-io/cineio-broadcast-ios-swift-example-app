@@ -13,7 +13,7 @@ class PublisherViewController: CineBroadcasterViewController {
     override func viewDidLoad() {
         //-- A/V setup
         self.orientationLocked = false  // set to true to turn off rotation support in UI
-        self.videoSize = CGSizeMake(720, 1280)
+        self.videoSize = CGSizeMake(1280, 720)
         self.framesPerSecond = 30
         self.videoBitRate = 1500000
         self.sampleRateInHz = 44100 // either 44100 or 22050
@@ -26,14 +26,14 @@ class PublisherViewController: CineBroadcasterViewController {
         
         // read our cine.io configuration from a plist bundle
         let path:NSString = NSBundle.mainBundle().pathForResource("cineio-settings", ofType: "plist")!
-        let settings:NSDictionary = NSDictionary(contentsOfFile: path)!
+        let settings:NSDictionary = NSDictionary(contentsOfFile: path as String)!
         NSLog("settings: %@", settings)
         
         // create a new CineClient to fetch our stream information
         var cine = CineClient()
-        cine.projectSecretKey = settings["CINE_IO_PROJECT_SECRET_KEY"] as String!
+        cine.projectSecretKey = settings["CINE_IO_PROJECT_SECRET_KEY"] as! String!
         self.updateStatus("Configuring stream using cine.io ...")
-        cine.getStream(settings["CINE_IO_STREAM_ID"] as String!, withCompletionHandler: { (error: NSError!, stream: CineStream!) -> Void in
+        cine.getStream(settings["CINE_IO_STREAM_ID"] as! String!, withCompletionHandler: { (error: NSError!, stream: CineStream!) -> Void in
             if (error != nil) {
                 self.updateStatus("ERROR: couldn't get stream information from cine.io")
             } else {
